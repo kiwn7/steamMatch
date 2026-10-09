@@ -1,29 +1,23 @@
-import './header.css';
-
-import {useLocation, Link} from 'react-router-dom'
-import navBar from "../navBar/navBar"
-import { useState } from 'react';
+import "./header.css";
+import { useLocation, Link } from "react-router-dom";
+import NavBar from "../navBar/NavBar";
+import { useState } from "react";
 
 const Header = () => {
-    const location = useLocation()
+  const location = useLocation();
+  const [user, setUser] = useState(null);
 
-    const [user, setUser] = useState(null);
+  /*if (location.pathname === "/") {
+    return null;
+  }*/
 
-    if(location.pathname === '/'){
-            return NULL;
-    }
+  return (
+    <header className="headerMain">
+      <span>Steam Match</span>
 
-    return(
+      <NavBar />
+    </header>
+  );
+};
 
-        <header className='headerMain'>
-            <span>
-                Steam Match 
-            </span>
-
-            <navBar className={navBar}/>
-
-        </header>
-    )
-}
-
-export default header;
+export default Header;

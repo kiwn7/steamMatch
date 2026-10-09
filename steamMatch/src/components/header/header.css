@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px 15px 50px;
+  background-color: var(--bg-header-color);
+  font-family: var(--sans);
+  position: relative;
+}
+
+header span,
+header nav {
+  flex: 1;
+}
+
+span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centra el texto de forma exacta */
+  color: var(--span-titulo-color);
+  font-weight: bold;
+  font-size: 40px;
+}
+
+header span:first-child {
+  flex: none; 
+}
+
+header nav {
+    margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
