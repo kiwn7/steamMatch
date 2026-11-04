@@ -10,8 +10,12 @@ const JUEGOS = [
   { id: 6, nombre: 'Terraria' },
 ]
 
-function Buscador(){
+function Buscador({ onAgregar }){
     const [busqueda, setBusqueda] = useState('');
+
+    const juegosFiltrados = JUEGOS.filter((juego) => 
+        juego.nombre.toLowerCase().includes(busqueda.toLowerCase())
+    )
 
     return(
         <div>
@@ -26,8 +30,10 @@ function Buscador(){
 
             
             <ul>
-                {JUEGOS.map((juego) => (
-                    <li key={juego.id}>{juego.nombre}</li>
+                {juegosFiltrados.map((juego) => (
+                    <li key={juego.id} onClick={() => onAgregar(juego)}>
+                        {juego.nombre}
+                    </li>
                 ))}
             </ul>
 
