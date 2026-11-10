@@ -28,14 +28,17 @@ function Buscador({ onAgregar }){
                 placeholder='Busca el nombre del juego'
             />
 
-            
-            <ul>
-                {juegosFiltrados.map((juego) => (
-                    <li key={juego.id} onClick={() => onAgregar(juego)}>
-                        {juego.nombre}
-                    </li>
-                ))}
-            </ul>
+            {juegos.lenght === 0 ? (
+                <p>Elegi tus juegos</p>
+            ) : (
+                <ul>
+                    {juegosFiltrados.map((juego) => (
+                        <li key={juego.id} onClick={() => onAgregar(juego)}>
+                            {juego.nombre}
+                        </li>
+                    ))}
+                </ul>
+            )}
 
         </div>
 

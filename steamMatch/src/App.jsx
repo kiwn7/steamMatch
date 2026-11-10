@@ -15,7 +15,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Buscador onAgregar={agregarJuego}/>}/>
       </Routes>
-      <ListaJuegos juegos={juegosElegidos}/>
+      <ListaJuegos juegos={juegosElegidos} onQuitar={quitarJuego}/>
     </BrowserRouter>
   )
 }
